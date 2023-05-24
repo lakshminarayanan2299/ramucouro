@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quora Clone - Answer Question</title>
+</head>
+
+<body>
+    <h1>Answer the Question</h1>
+    <h3>{{ question.title }}</h3>
+    <p>{{ question.content }}</p>
+    <form method="post" action="{% url 'answer_question' question.id %}">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Answer</button>
+    </form>
+</body>
+
+</html>
